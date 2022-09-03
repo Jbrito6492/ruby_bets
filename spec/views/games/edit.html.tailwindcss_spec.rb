@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "games/edit", type: :view do
   before(:each) do
-    schedule = FactoryBot.create(:schedule)
-    @game = FactoryBot.create(:game, schedule: schedule)
+    season = FactoryBot.create(:season)
+    @game = FactoryBot.create(:game, season: season)
   end
 
   it "renders the edit game form" do
@@ -15,7 +15,7 @@ RSpec.describe "games/edit", type: :view do
 
       assert_select "input[name=?]", "game[home_team]"
 
-      assert_select "input[name=?]", "game[schedule_id]"
+      assert_select "input[name=?]", "game[season_id]"
     end
   end
 end

@@ -2,17 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "games/show", type: :view do
   before(:each) do
-    @game = assign(:game, Game.create!(
-      away_team: "Away Team",
-      home_team: "Home Team",
-      schedule: nil
-    ))
+    season = FactoryBot.create(:season)
+    @game = assign(:game, FactoryBot.create(:game, season: season))
   end
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Away Team/)
-    expect(rendered).to match(/Home Team/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/#{@game.away_team}/)
+    expect(rendered).to match(/#{@game.home_team}/)
   end
 end

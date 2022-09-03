@@ -5,7 +5,7 @@ RSpec.describe "games/new", type: :view do
     assign(:game, Game.new(
       away_team: "MyString",
       home_team: "MyString",
-      schedule: nil
+      season: nil
     ))
   end
 
@@ -18,7 +18,7 @@ RSpec.describe "games/new", type: :view do
 
       assert_select "input[name=?]", "game[home_team]"
 
-      assert_select "input[name=?]", "game[schedule_id]"
+      assert_select "input[name=?]", "game[season_id]"
     end
   end
 end

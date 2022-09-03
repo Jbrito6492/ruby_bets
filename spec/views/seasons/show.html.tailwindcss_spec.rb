@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "schedules/show", type: :view do
+RSpec.describe "seasons/show", type: :view do
   before(:each) do
-    @schedule = assign(:schedule, Schedule.create!(
+    @season = assign(:season, Season.create!(
       week: 2,
       year: 3
     ))

@@ -1,6 +1,6 @@
-class CreateSchedules < ActiveRecord::Migration[7.0]
+class CreateSeasons < ActiveRecord::Migration[7.0]
   def change
-    create_table :schedules do |t|
+    create_table :seasons do |t|
       t.integer :week
       t.integer :year
 

@@ -17,14 +17,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_052851) do
   create_table "games", force: :cascade do |t|
     t.string "away_team"
     t.string "home_team"
-    t.datetime "gametime"
-    t.bigint "schedule_id", null: false
+    t.datetime "game_time"
+    t.bigint "season_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["schedule_id"], name: "index_games_on_schedule_id"
+    t.index ["season_id"], name: "index_games_on_season_id"
   end
 
-  create_table "schedules", force: :cascade do |t|
+  create_table "seasons", force: :cascade do |t|
     t.integer "week"
     t.integer "year"
     t.datetime "created_at", null: false
@@ -40,6 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_052851) do
     t.index ["game_id"], name: "index_teams_on_game_id"
   end
 
-  add_foreign_key "games", "schedules"
+  add_foreign_key "games", "seasons"
   add_foreign_key "teams", "games"
 end

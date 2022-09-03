@@ -2,17 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "teams/show", type: :view do
   before(:each) do
-    @team = assign(:team, Team.create!(
-      name: "Name",
-      short_name: "Short Name",
-      game: nil
-    ))
+    @game = assign(:game, FactoryBot.create(:game))
+    @team = assign(:team, FactoryBot.create(:team, game: @game))
   end
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Short Name/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/#{@team.name}/)
+    expect(rendered).to match(/#{@team.short_name}/)
   end
 end

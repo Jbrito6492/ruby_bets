@@ -2,11 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "teams/edit", type: :view do
   before(:each) do
-    @team = assign(:team, Team.create!(
-      name: "MyString",
-      short_name: "MyString",
-      game: nil
-    ))
+    @game = assign(:game, FactoryBot.create(:game))
+    @team = assign(:team, FactoryBot.create(:team, game: @game))
   end
 
   it "renders the edit team form" do

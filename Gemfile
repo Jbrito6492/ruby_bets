@@ -75,6 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
 end
 
 gem "figaro", "~> 1.2"
