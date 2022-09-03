@@ -12,7 +12,7 @@ processes = []
     RUBY_VERSION = "3.1.2"
 
 [deploy]
-  release_command = "bin/rails db:migrate fly:release"
+  release_command = "bin/rails fly:release"
 
 [env]
   PORT = "8080"
