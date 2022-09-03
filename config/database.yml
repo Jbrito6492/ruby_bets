@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: ruby_bets_production
-  username: ruby_bets
-  password: <%= ENV["RUBY_BETS_DATABASE_PASSWORD"] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  username: postgres
+  password: <%= ENV['DATABASE_PASSWORD'] %>
