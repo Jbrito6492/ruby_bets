@@ -2,11 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "games/edit", type: :view do
   before(:each) do
-    @game = assign(:game, Game.create!(
-      away_team: "MyString",
-      home_team: "MyString",
-      schedule: nil
-    ))
+    schedule = FactoryBot.create(:schedule)
+    @game = FactoryBot.create(:game, schedule: schedule)
   end
 
   it "renders the edit game form" do
