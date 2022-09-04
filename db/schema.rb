@@ -18,15 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_052851) do
     t.string "away_team"
     t.string "home_team"
     t.datetime "game_time"
-    t.bigint "season_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["season_id"], name: "index_games_on_season_id"
-  end
-
-  create_table "seasons", force: :cascade do |t|
-    t.integer "week"
-    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +31,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_052851) do
     t.index ["game_id"], name: "index_teams_on_game_id"
   end
 
-  add_foreign_key "games", "seasons"
   add_foreign_key "teams", "games"
 end

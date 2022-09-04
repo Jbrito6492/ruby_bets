@@ -65,6 +65,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:away_team, :home_team, :game_time, :season_id)
+      params.require(:game).permit(:away_team, :home_team, :game_time)
     end
 end
