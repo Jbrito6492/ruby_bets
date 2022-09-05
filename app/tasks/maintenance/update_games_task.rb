@@ -16,6 +16,7 @@ module Maintenance
     def count
       # Optionally, define the number of rows that will be iterated over
       # This is used to track the task's progress
+      collection.count
     end
   end
 end

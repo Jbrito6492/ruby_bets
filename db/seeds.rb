@@ -30,13 +30,13 @@ teams = [{ name: "Arizona Cardinals", short_name: "ARI" },
          { name: "New Orleans Saints", short_name: "NO" },
          { name: "New York Giants", short_name: "NYG" },
          { name: "New York Jets", short_name: "NYJ" },
-         { name: "Oakland Raiders", short_name: "OAK" },
+         { name: "Las Vegas Raiders", short_name: "LV" },
          { name: "Philadelphia Eagles", short_name: "PHI" },
          { name: "Pittsburgh Steelers", short_name: "PIT" },
          { name: "San Francisco 49ers", short_name: "SF" },
          { name: "Seattle Seahawks", short_name: "SEA" },
          { name: "Tampa Bay Buccaneers", short_name: "TB" },
          { name: "Tennessee Titans", short_name: "TEN" },
-         { name: "Washington Football Team", short_name: "WAS" }]
+         { name: "Washington Commanders", short_name: "WSH" }]
 
 teams.each { |team| Team.find_or_create_by!(team) }
