@@ -1,6 +1,7 @@
 <div id="<%= dom_id game %>" class="flex justify-between">
   <p class="my-5">
     <strong class="block font-medium mb-1">Away team:</strong>
+    <%= show_svg(game.teams.first) %>
     <%= game.away_team %>
   </p>
 
@@ -11,6 +12,7 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Home team:</strong>
+    <%= show_svg(game.teams.last) %>
     <%= game.home_team %>
   </p>
 
