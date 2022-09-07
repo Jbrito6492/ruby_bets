@@ -11,4 +11,3 @@ RSpec.describe "teams/show", type: :view do
     expect(rendered).to match(/#{@team.short_name}/)
   end
 end
-r
