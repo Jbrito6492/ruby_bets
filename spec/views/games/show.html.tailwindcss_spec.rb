@@ -6,6 +6,8 @@ RSpec.describe "games/show", type: :view do
   end
 
   it "renders attributes in <p>" do
+    allow(view).to receive(:show_svg)
+
     render
     expect(rendered).to match(/#{@game.away_team}/)
     expect(rendered).to match(/#{@game.home_team}/)
