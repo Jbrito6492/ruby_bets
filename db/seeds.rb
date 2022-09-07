@@ -40,3 +40,4 @@ teams = [{ name: "Arizona Cardinals", short_name: "ARI" },
          { name: "Washington Commanders", short_name: "WSH" }]
 
 teams.each { |team| Team.find_or_create_by!(team) }
+
