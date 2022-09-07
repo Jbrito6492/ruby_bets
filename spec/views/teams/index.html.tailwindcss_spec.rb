@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "teams/index", type: :view do
   before(:each) do
-    @game = assign(:game, FactoryBot.create(:game))
     assign(:teams, [
-      FactoryBot.create(:team, game: @game),
-      FactoryBot.create(:team, game: @game)
+      FactoryBot.create(:team),
+      FactoryBot.create(:team)
     ])
   end
 

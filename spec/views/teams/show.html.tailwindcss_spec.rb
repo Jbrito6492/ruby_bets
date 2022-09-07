@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "teams/show", type: :view do
   before(:each) do
-    @game = assign(:game, FactoryBot.create(:game))
-    @team = assign(:team, FactoryBot.create(:team, game: @game))
+    @team = assign(:team, FactoryBot.create(:team))
   end
 
   it "renders attributes in <p>" do

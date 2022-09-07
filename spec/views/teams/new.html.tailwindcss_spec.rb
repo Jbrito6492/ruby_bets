@@ -5,7 +5,6 @@ RSpec.describe "teams/new", type: :view do
     assign(:team, Team.new(
       name: "MyString",
       short_name: "MyString",
-      game: nil
     ))
   end
 
@@ -18,7 +17,6 @@ RSpec.describe "teams/new", type: :view do
 
       assert_select "input[name=?]", "team[short_name]"
 
-      assert_select "input[name=?]", "team[game_id]"
     end
   end
 end
