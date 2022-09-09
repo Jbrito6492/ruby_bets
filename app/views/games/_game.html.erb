@@ -1,10 +1,7 @@
-<div id="<%= dom_id game %>" class="max-w-sm w-full lg:max-w-full lg:flex">
+<div id="<%= dom_id game %>" class="max-w-sm w-full lg:max-w-full lg:flex my-5">
   <div class="h-48 lg:h-auto flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
   </div>
   <div class="border border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-md p-4 flex flex-col justify-between leading-normal w-full">
-    <div class="mb-8">
-      <div class="text-gray-900 font-bold text-xl mb-2">Choose Winner</div>
-    </div>
     <div class="flex items-center justify-between">
       <div><%= show_svg(away_team(game)) %>
         <%= link_to_if !started?(game), game.away_team, edit_game_path(game), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
