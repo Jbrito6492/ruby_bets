@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount MaintenanceTasks::Engine => "/maintenance_tasks"
   resources :teams
   resources :games
