@@ -4,7 +4,7 @@
   <div class="border border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-md p-4 flex flex-col justify-between leading-normal w-full">
     <div class="flex items-center justify-between">
       <div><%= show_svg(away_team(game)) %>
-        <%= link_to_if !started?(game), game.away_team, edit_game_path(game), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        <%= link_to_if !started?(game), game.away_team, edit_game_path(game), class: "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
       </div>
       <p class="text-sm text-gray-600 flex items-center">
         <% if started?(game) %>
@@ -17,7 +17,7 @@
         <% end %>
       </p>
       <div><%= show_svg(home_team(game)) %>
-        <%= link_to_if !started?(game), game.home_team, edit_game_path(game), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        <%= link_to_if !started?(game), game.home_team, edit_game_path(game), class: "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
       </div>
     </div>
     <div class="flex items-center justify-between">
