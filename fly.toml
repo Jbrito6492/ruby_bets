@@ -1,22 +1,24 @@
-# fly.toml file generated for delicate-paper-185 on 2022-09-02T19:45:10-07:00
+# fly.toml file generated for ruby-bets on 2022-09-24T22:10:48-07:00
 
-app = "delicate-paper-185"
+app = "ruby-bets"
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = []
+
+[processes]
+web = "bin/rails fly:server"
+worker = "bundle exec sidekiq"
+
 
 [build]
   [build.args]
-    BUNDLER_VERSION = "2.3.20"
-    NODE_VERSION = "16.10.0"
-    RUBY_VERSION = "3.1.2"
+    BUILD_COMMAND = "bin/rails fly:build"
+    SERVER_COMMAND = "bin/rails fly:server"
 
 [deploy]
   release_command = "bin/rails fly:release"
 
 [env]
   PORT = "8080"
-  SERVER_COMMAND = "bin/rails fly:server"
 
 [experimental]
   allowed_public_ports = []
@@ -25,7 +27,7 @@ processes = []
 [[services]]
   http_checks = []
   internal_port = 8080
-  processes = ["app"]
+  processes = ["web"]
   protocol = "tcp"
   script_checks = []
   [services.concurrency]
