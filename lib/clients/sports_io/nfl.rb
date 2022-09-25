@@ -3,10 +3,10 @@ require 'faraday'
 module Clients
   module SportsIo
     class Nfl
-      BASE_URL = 'https://api.sportsdata.io/v3/nfl'.freeze
+      BASE_URL = 'https://api.sportsdata.io/v3/nfl/'
       attr_reader :api_key, :adapter
 
-      def initialize(api_key: ENV['SPORTS_IO_API_KEY'], adapter: Faraday.default_adapter)
+      def initialize(api_key: ENV['SPORTSIO_API_KEY'], adapter: Faraday.default_adapter)
         @api_key = api_key
         @adapter = adapter
       end
@@ -26,7 +26,7 @@ module Clients
       end
 
       def games
-        connection.get("/scores/json/Schedules/#{DateTime.now.year}").body
+        connection.get("scores/json/Schedules/#{DateTime.now.year}").body.each { |game| game.deep_symbolize_keys! }
       end
     end
   end

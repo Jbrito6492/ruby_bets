@@ -3,11 +3,7 @@
 app = "ruby-bets"
 kill_signal = "SIGINT"
 kill_timeout = 5
-
-[processes]
-web = "bin/rails fly:server"
-worker = "bundle exec sidekiq"
-
+processes = []
 
 [build]
   [build.args]
@@ -53,3 +49,7 @@ worker = "bundle exec sidekiq"
 [[statics]]
   guest_path = "/app/public"
   url_prefix = "/"
+
+[processes]
+web = "bin/rails fly:server"
+worker = "bundle exec sidekiq"
