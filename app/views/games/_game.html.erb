@@ -1,7 +1,7 @@
-<div id="<%= dom_id game %>" class="max-w-sm w-full lg:max-w-full lg:flex my-5">
-  <div class="h-48 lg:h-auto flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">
+<div id="<%= dom_id game %>" class="max-w-sm w-full md:max-w-full md:flex my-5">
+  <div class="h-48 md:h-auto flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden" style="background-image: url('/img/card-left.jpg')">
   </div>
-  <div class="border border-gray-400 lg:border-t lg:border-gray-400 bg-white rounded-md p-4 flex flex-col justify-between leading-normal w-full">
+  <div class="border border-gray-400 md:border-t md:border-gray-400 bg-white rounded-md p-4 flex flex-col justify-between leading-normal w-full">
     <div class="flex items-center justify-between">
       <div><%= show_svg(away_team(game)) %>
         <%= link_to_if !started?(game), game.away_team, edit_game_path(game), class: "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
