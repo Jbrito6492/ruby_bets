@@ -41,8 +41,8 @@
 
     <p class="mt-2 text-sm text-gray-700"><%= localized_game_time(game) %></p>
     <div class="mt-4 flex items-center justify-between font-medium text-center">
-      <%= link_to_if !started?(game), game.away_team, edit_game_path(game), class: "mt-4 block w-5/12 rounded-sm bg-yellow-500 p-4 text-sm font-medium" %>
-      <%= link_to_if !started?(game), game.home_team, edit_game_path(game), class: "mt-4 block w-5/12 rounded-sm bg-yellow-500 p-4 text-sm font-medium" %>
+      <%= link_to_if !started?(game), game.away_team, edit_game_path(game), class: "mt-4 block w-5/12 h-12 rounded-sm bg-yellow-400 p-4 text-sm font-medium" %>
+      <%= link_to_if !started?(game), game.home_team, edit_game_path(game), class: "mt-4 block w-5/12 h-12 rounded-sm bg-yellow-400 p-4 text-sm font-medium" %>
     </div>
   </div>
 </div>
