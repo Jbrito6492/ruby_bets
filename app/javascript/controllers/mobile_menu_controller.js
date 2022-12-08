@@ -6,7 +6,6 @@ export default class extends Controller {
 
     toggleDropdown(event) {
         event.preventDefault()
-        console.log('testing')
         this.dropdownContentTarget.classList.toggle('hidden')
     }
 }
