@@ -37,7 +37,17 @@ teams = [{ name: "Arizona Cardinals", short_name: "ARI" },
          { name: "Seattle Seahawks", short_name: "SEA" },
          { name: "Tampa Bay Buccaneers", short_name: "TB" },
          { name: "Tennessee Titans", short_name: "TEN" },
-         { name: "Washington Commanders", short_name: "WSH" }]
+         { name: "Washington Commanders", short_name: "WAS" }]
 
 teams.each { |team| Team.find_or_create_by!(team) }
+
+nfl_client = Clients::SportsIo::Nfl.new
+nfl_client.games.each do |game|
+  away_team = Team.find_by(short_name: game[:AwayTeam])
+  home_team = Team.find_by(short_name: game[:HomeTeam])
+  if away_team && home_team
+    game = Game.find_or_create_by!(away_team: away_team.name, home_team: home_team.name, week: game[:Week], game_time: game[:DateTime])
+    game.teams = [away_team, home_team]
+  end
+end
 

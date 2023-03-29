@@ -1,12 +1,12 @@
 module GamesHelper
   def show_svg(team)
-    File.open("app/assets/images/#{team.short_name}.svg", "rb") do |file|
+    File.open("app/assets/images/#{team.short_name}.svg", 'rb') do |file|
       raw file.read
     end
   end
 
   def localized_game_time(game)
-    game.game_time.localtime.strftime("%A, %B %e, %Y at %l:%M %p")
+    game.game_time.localtime.strftime('%A, %B %e, %Y at %l:%M %p')
   end
 
   def away_team(game)

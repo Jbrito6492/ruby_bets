@@ -12,11 +12,12 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-<%= turbo_frame_tag :top do %>
+<div data-controller="mobile-menu">
   <%= render "layouts/header" %>
-<% end %>
-<div class="bg-slate-800 dark:bg-slate-800">
-  <main class="container mx-auto mt-28 px-5 flex">
+  <%= render 'shared/mobile_nav' %>
+</div>
+<div class="bg-white dark:bg-slate-800">
+  <main class="container mx-auto px-5 flex">
     <%= yield %>
   </main>
 </div>
