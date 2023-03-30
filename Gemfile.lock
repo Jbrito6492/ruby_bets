@@ -135,7 +135,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    maintenance_tasks (1.10.3)
+    maintenance_tasks (2.1.0)
       actionpack (>= 6.0)
       activejob (>= 6.0)
       activerecord (>= 6.0)
@@ -169,8 +169,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
-    rack-protection (3.0.5)
-      rack
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.4.3)
@@ -205,7 +203,8 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    redis (3.3.5)
+    redis-client (0.14.0)
+      connection_pool
     regexp_parser (2.7.0)
     reline (0.3.3)
       io-console (~> 0.5)
@@ -249,11 +248,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sidekiq (4.2.10)
-      concurrent-ruby (~> 1.0)
-      connection_pool (~> 2.2, >= 2.2.0)
-      rack-protection (>= 1.5.0)
-      redis (~> 3.2, >= 3.2.1)
+    sidekiq (7.0.7)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.11.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -301,22 +300,22 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  devise (~> 4.8, >= 4.8.1)
+  devise
   factory_bot_rails
   faker
-  faraday (~> 2.5, >= 2.5.2)
-  figaro (~> 1.2)
+  faraday
+  figaro
   importmap-rails
   jbuilder
-  maintenance_tasks (~> 1.10)
+  maintenance_tasks
   pg (~> 1.1)
   puma (~> 5.0)
-  rails (~> 7.0.3, >= 7.0.3.1)
-  rails-controller-testing (~> 1.0, >= 1.0.5)
+  rails
+  rails-controller-testing
   rspec-rails
   rubocop
   selenium-webdriver
-  sidekiq (~> 4.1, >= 4.1.2)
+  sidekiq
   sprockets-rails
   stimulus-rails
   tailwindcss-rails

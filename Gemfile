@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.1'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+gem 'rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -74,17 +74,18 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
 
-gem 'figaro', '~> 1.2'
+gem 'figaro'
 
-gem 'maintenance_tasks', '~> 1.10'
+gem 'maintenance_tasks'
 
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise'
 
-gem 'faraday', '~> 2.5', '>= 2.5.2'
+gem 'faraday'
 
-gem 'sidekiq', '~> 4.1', '>= 4.1.2'
+gem "sidekiq"
+
